@@ -1908,9 +1908,9 @@ while :; do
                         break
                     }
                     sizemax=$(echo -e ${#message_text[$id]})
-                    [[ "$sizemax" -gt '10' ]] && {
+                    [[ "$sizemax" -gt '20' ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "❌ Erro !\n\nUse no maximo 8 caracteres\n[EX: vps]")" \
+                            --text "$(echo -e "❌ Erro !\n\nUse no maximo 20 caracteres\n[EX: vps]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
