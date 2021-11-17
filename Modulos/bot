@@ -1969,7 +1969,7 @@ while :; do
 
                 'Validade em dias:')
                     verifica_acesso
-                    [[ "$_erro" == '1' ]] && break
+                    [[ "$_erro" -lt '31' ]] && break
                     [[ ${message_text[$id]} != ?(+|-)+([0-9]) ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
                             --text "$(echo -e "❌ Erro ! \n\nUltilize apenas numeros [EX: 30]")" \
