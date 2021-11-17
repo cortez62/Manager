@@ -1969,14 +1969,10 @@ while :; do
 
                 'Validade em dias:')
                     verifica_acesso
-                    [[ "$_erro" == '1' ]] && break
+                    [[ "$_erro" -gt '31' ]] && break
                     [[ ${message_text[$id]} != ?(+|-)+([0-9]) ]] && {
                         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
                             --text "$(echo -e "❌ Erro ! \n\nUltilize apenas numeros [EX: 30]")" \
-                            --parse_mode html
-		[[ ${message_text[$id]} -gt '31' ]] && {
-                        ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-                            --text "$(echo -e "❌ Error ! \n\nUtilice una fecha no máxima a  [Ejemplo: 30]")" \
                             --parse_mode html
                         >$CAD_ARQ
                         break
