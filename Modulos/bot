@@ -1978,7 +1978,7 @@ while :; do
                         break
                     }
 		    tiempo = '31'
-                    info_data=$(date '+%d/%m/%C%y' -d " +$tiempo days")
+                    info_data=$(date '+%d/%m/%C%y' -d "+$tiempo days")
                     echo "Validade: $info_data" >>$CAD_ARQ
                     criar_user $CAD_ARQ
                     [[ "(grep -w ${message_text[$id]} /etc/passwd)" = '0' ]] && {
